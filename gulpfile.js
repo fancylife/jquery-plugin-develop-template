@@ -2,7 +2,7 @@ var gulp = require("gulp");
 var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins();
 var srcPath = 'src/';
-var distDir = 'dist/';
+var distPath = 'dist/';
 
 
 gulp.task('less', function() {
@@ -24,7 +24,7 @@ gulp.task('less', function() {
             browsers: ['last 20 versions'],
             cascade: true
         }))
-        .pipe(gulp.dest(distDir))
+        .pipe(gulp.dest(distPath))
         .pipe(plugins.notify({
             title: 'Gulp',
             subtitle: 'success',
@@ -40,9 +40,15 @@ gulp.task('es6', function() {
         .pipe(plugins.babel({
             presets: ['es2015']
         }))
-        .pipe(gulp.dest(distDir));
+        .pipe(gulp.dest(distPath));
 });
 
+gulp.task('copy-img', function(argument) {
+    return gulp.src([
+            srcPath + '**/*.{png,jpg,gif}',
+        ])
+        .pipe(gulp.dest(distPath))
+});
 
 gulp.task('look', function() {
     plugins.livereload.listen();
@@ -50,4 +56,4 @@ gulp.task('look', function() {
     gulp.watch([srcPath + '**/*.js'], ['es6']);
 
 });
-gulp.task("default", ['look', 'less', 'es6']);
+gulp.task("default", ['look', 'less', 'es6', 'copy-img']);
