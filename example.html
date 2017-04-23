@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>example</title>
+		<link href="./dist/tl.css" rel="stylesheet"  type="text/css"/>
+
+
+		<style type="text/css">
+		ul{
+			list-style:none;
+		}
+		li{
+			padding: 5px;
+		}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+		<a  id="test" href="#"  >Mask</a>
+		</li>
+		<li>
+		<a  id="test2" href="#">Popover</a>
+	</li>
+		<li>
+		<a  id="test3" href="#">Backtoup</a>
+	</li>
+	</ul>
+
+	<script src="./libs/jquery-1.8.3.min.js" type=text/javascript></script>
+	<script src="./dist/tl.js" type=text/javascript></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$("#test").click(function() {
+				$("body").TlMakerLayer("wwwwwwwwwwwwwwwwwwww",600,300);
+
+			});
+			$("#test2").hover(function() {
+				$(this).TlPopover("大家好哦").Show();
+
+			}, function() {
+				$(this).TlPopover("大家好哦").Remove();
+			});
+
+				$("#test3").click(function() {
+						$("body").TlSetBackTop();
+
+			});
+
+		});
+
+		</script>
+
+	</body>
+</html>
