@@ -1,7 +1,7 @@
 {
     "name": "tl",
     "version": "1.0.0",
-    "description": "the collection of common ui component ",
+    "description": "jquery-plugin-develop-template",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,8 +9,10 @@
     },
     "keywords": [
         "jquery",
-        "ui",
-        "compoent"
+        "jquery-plugin",
+        "develop",
+        "template",
+        "jquery-cli"
     ],
     "author": "TerryZhang",
     "license": "MIT",
