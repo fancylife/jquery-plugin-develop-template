@@ -8,6 +8,22 @@
   left: 0;
   opacity: 0.5;
 }
+.t__notice {
+  position: absolute;
+  z-index: 1000;
+  font-size: 22px;
+  max-width: 150px;
+  background-color: #ffffff;
+  color: #049FF1;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  -webkit-box-shadow: 0 1px 12px #bbb;
+          box-shadow: 0 1px 12px #bbb;
+  text-align: center;
+  opacity: 1;
+}
 .t__shade {
   font-family: "微软雅黑";
   -webkit-border-radius: 4px;
@@ -15,10 +31,10 @@
   display: none;
   position: absolute;
   /*设置为绝对定位*/
-  border: #bfe5b3 solid 1px;
   z-index: 200;
   /*设置层叠*/
   background: #fff;
+  padding: 15px;
 }
 .t__shade__close {
   position: absolute;
@@ -27,16 +43,62 @@
   font-size: 14px;
   color: #ddd;
 }
-/* 名片*/
 .t__popover {
-  background: #fff;
-  -webkit-box-shadow: 1px 1px 3px #292929;
-  box-shadow: 1px 1px 3px #292929;
-  width: 200px;
-  height: 100px;
-  font-family: "微软雅黑";
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  opacity: 1;
+  padding: 15px;
+  position: absolute;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.t__popover:after {
+  content: "";
+  display: block;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+  position: absolute;
+}
+.t__popover:before {
+  content: "";
+  display: block;
+  border-top: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+  position: absolute;
+  opacity: 0.5;
+}
+.t__popover.bottom-center:after {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+}
+.t__popover.bottom-center:before {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -8px;
+}
+.t__popover.bottom-left:after {
+  bottom: 100%;
+  margin-left: 8px;
+}
+.t__popover.bottom-left:before {
+  bottom: 100%;
+  margin-left: 5px;
+}
+.t__popover.bottom-right:after {
+  right: 0;
+  bottom: 100%;
+  margin-right: 8px;
+}
+.t__popover.bottom-right:before {
+  right: 0;
+  bottom: 100%;
+  margin-right: 5px;
 }
 /*回到顶部按钮*/
 .t__backtop {

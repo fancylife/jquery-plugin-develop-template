@@ -33,18 +33,18 @@
 		$(document).ready(function() {
 
 			$("#test").click(function() {
-				$("body").TlMakerLayer("wwwwwwwwwwwwwwwwwwww",600,300);
+				$("body").tlMakerLayer("Hello world",600,300);
 
 			});
 			$("#test2").hover(function() {
-				$(this).TlPopover("大家好哦").Show();
-
+				$(this).tlPopover({
+					content:'大家好哦'
+				}).show();
 			}, function() {
-				$(this).TlPopover("大家好哦").Remove();
+				$(this).tlPopover().remove();
 			});
-
-				$("#test3").click(function() {
-						$("body").TlSetBackTop();
+			$("#test3").click(function() {
+				$("body").tlSetBackTop();
 
 			});
 
