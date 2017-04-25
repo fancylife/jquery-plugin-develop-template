@@ -1,12 +1,6 @@
-.t__bg {
-	background: #000;
-	display: block;
-	z-index: 100;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	opacity: 0.5;
+@import "lh.less";
+.pointer(){
+    cursor: pointer;
 }
 .t__notice{
     position:absolute;
@@ -22,27 +16,6 @@
     box-shadow:0 1px 12px #bbb;
     text-align:center;
     opacity:1;
-}
-.t__shade {
-	font-family: "微软雅黑";
-	border-radius: 4px;
-	display: none;
-	position: absolute; /*设置为绝对定位*/
-	z-index: 200; /*设置层叠*/
-	background: #fff;
-	padding: 15px;
-}
-
-.t__shade__close {
-	position: absolute;
-	right: 2%;
-	top: 1%;
-	font-size: 14px;
-	color: #ddd;
-}
-
-.t__shade__close:hover {
-
 }
 
 .t__popover {
@@ -108,22 +81,32 @@
 }
 
 
-/*回到顶部按钮*/
-.t__backtop {
-	display: block;
-	width: 50px;
-	height: 50px;
-	background: #666 url(images/top.png) 8px -57px no-repeat;
-	margin-bottom: 15px;
-	outline: 0 none;
-	text-indent: -9999em;
-	-moz-border-radius: 4px;
-	-khtml-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	position: fixed;
-}
-
-.t__backtop:hover {
-	background: #333 url(images/top.png) 8px 14px no-repeat;
+.t__modal {
+    position: fixed;
+    display: none;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1999;
+    .t__modal-bg {
+        opacity: .55;
+        filter: alpha(opacity=55);
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        height: 100%;
+    }
+    .t__modal-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: white;
+        .lh-border-radius(12px);
+        .t__modal-close {
+            .pointer();
+            position: absolute;
+            right: 16px;
+            top: 16px;
+        }
+    }
 }

@@ -43,17 +43,33 @@ gulp.task('es6', function() {
         .pipe(gulp.dest(distPath));
 });
 
+gulp.task('bundle', function() {
+
+    gulp.src([srcPath + '**/*.js'])
+
+    .pipe(plugins.rollup({
+            entry: srcPath + 'js/tl.js',
+            format: 'es'
+        }))
+        .pipe(plugins.sourcemaps.write())
+        .pipe(plugins.babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest(distPath));
+
+});
+
 gulp.task('copy-img', function(argument) {
     return gulp.src([
             srcPath + '**/*.{png,jpg,gif}',
         ])
-        .pipe(gulp.dest(distPath))
+        .pipe(gulp.dest(distPath));
 });
 
 gulp.task('look', function() {
     plugins.livereload.listen();
     gulp.watch([srcPath + '**/*.less'], ['less']);
-    gulp.watch([srcPath + '**/*.js'], ['es6']);
+    gulp.watch([srcPath + '**/*.js'], ['bundle']);
 
 });
-gulp.task("default", ['look', 'less', 'es6', 'copy-img']);
+gulp.task("default", ['look', 'less', 'bundle', 'copy-img']);
