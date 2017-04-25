@@ -11,29 +11,31 @@
 		<li>
 			<a  id="btn-popover" href="#">Popover</a>
 		</li>
+		<li>
+			<a  id="btn-remind" href="#">Remind</a>
+		</li>
 	</ul>
 	<script src="libs/jquery-1.8.3.min.js" type=text/javascript></script>
 	<script src="dist/js/tl.js" type=text/javascript></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-
+			$("#btn-remind").click(function() {
+				$.Tl.remind('remind content');
+			});
 			$("#btn-modal").click(function() {
-				$("body").tlModal({
-					content:"Hello world",
+				$.Tl.modal({
+					$trigger:$(this),
+					content:"modal content",
 					width:600,
 					height:300
 				});
 			});
-			$("#btn-popover").hover(function() {
-				$(this).tlPopover({
-					content:'大家好哦'
-				}).show();
-			}, function() {
-				$(this).tlPopover().remove();
+
+			$.Tl.popover({
+				content:'popover content',
+				trigger: $('#btn-popover')
 			});
-
 		});
-
 		</script>
 
 	</body>
